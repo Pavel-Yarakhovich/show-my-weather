@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import 'variables';
 
 .Card {
   display: flex;
@@ -8,7 +8,7 @@
   padding: 27px 5px;
   width: 152.02px;
   height: 207.23;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FBF8E1;
+  background: linear-gradient(180deg,$white 0%, rgba($white, 0) 100%), #FBF8E1;
   border-radius: 8px;
   
 
