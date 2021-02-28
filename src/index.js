@@ -4,6 +4,12 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { startMockServer } from './__mocks__/mockServer.jsx';
+
+if (process.env.NODE_ENV === 'development') {
+  startMockServer();
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
