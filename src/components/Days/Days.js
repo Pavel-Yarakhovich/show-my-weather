@@ -9,7 +9,7 @@ export const Days = () => {
       <DayCard />
       <DayCard />
       <DayCard />
-      <DayCard className="Card ScaleCard" />
+      <DayCard />
       <DayCard />
       <DayCard />
       <DayCard />
