@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import { observer } from 'mobx-react-lite';
 import { ONE_CALL_API } from '../constants/API';
 
-export const Home = () => {
+export const Home = observer(({ store }) => {
   const [weatherData, setWeatherData] = React.useState(null);
   const [coords, setCoords] = React.useState(null);
 
@@ -39,4 +40,4 @@ export const Home = () => {
   }, [coords]);
 
   return weatherData ? <p>Home component</p> : <p>Loading...</p>;
-};
+});
