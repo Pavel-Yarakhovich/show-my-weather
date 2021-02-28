@@ -1,5 +1,6 @@
 import React from 'react';
 import { DayCard } from './DayCard/DayCard';
+import './Days.scss';
 
 export const Days = () => {
   return (

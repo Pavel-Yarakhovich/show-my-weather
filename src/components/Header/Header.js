@@ -1,6 +1,7 @@
 import React from 'react';
+import './Header.scss';
 
-const header = () => {
+export const Header = () => {
   return (
     <header className="Header">
       <h1 className="Date">25 February 2021</h1>
@@ -12,5 +13,3 @@ const header = () => {
     </header>
   );
 };
-
-export default header;

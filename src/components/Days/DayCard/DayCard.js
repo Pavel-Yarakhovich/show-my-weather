@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/sun.svg';
+import './DayCard.scss';
 
 export const DayCard = () => {
   return (
