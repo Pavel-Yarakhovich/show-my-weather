@@ -1,14 +1,14 @@
 import React from 'react';
-import './Header.scss';
+import classes from './Header.module.scss';
 
 export const Header = () => {
   return (
-    <header className="Header">
-      <h1 className="Date">25 February 2021</h1>
+    <header className={classes.Header}>
+      <h1 className={classes.Date}>25 February 2021</h1>
       <input
         type="search"
         placeholder="Enter location..."
-        className="Location"
+        className={classes.Location}
       />
     </header>
   );

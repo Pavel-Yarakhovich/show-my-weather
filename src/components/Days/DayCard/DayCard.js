@@ -1,11 +1,15 @@
 import React from 'react';
 import logo from '../../../assets/sun.svg';
-import './DayCard.scss';
+import classes from './DayCard.module.scss';
 
-export const DayCard = () => {
+export const DayCard = (props) => {
+  let cardClasses = [classes.Card];
+  if (props.id === 'scale') {
+    cardClasses.push(classes.Scale);
+  }
   return (
-    <div className="Card">
-      <h2 className="Day">Wednesday 25 February</h2>
+    <div className={cardClasses.join(' ')}>
+      <h2 className={classes.Day}>Wednesday 25 February</h2>
       <img src={logo}></img>
       <table>
         <tbody>

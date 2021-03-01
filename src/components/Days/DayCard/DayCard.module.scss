@@ -20,7 +20,7 @@
       text-align: center;
       @include text(Roboto, 700, 14px, 16.41px, 0.05em);
     }
-    
+        
     table {
       margin: 0;
       padding: 0;
@@ -37,4 +37,6 @@
     }
 }
 
-
+.Scale {
+  transform: scale(1.23);
+}
