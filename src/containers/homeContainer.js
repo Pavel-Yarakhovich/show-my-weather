@@ -3,7 +3,7 @@ import axios from 'axios';
 import { observer } from 'mobx-react-lite';
 import { ONE_CALL_API } from '../constants/API';
 
-import Header from '../components/Header/Header';
+import { Header } from '../components/Header/Header';
 import { Days } from '../components/Days/Days';
 
 export const Home = observer(({ store }) => {
