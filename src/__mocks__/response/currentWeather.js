@@ -12,7 +12,7 @@ export const currentWeather = {
     uvi: 0.25,
     visibility: 10000,
     weather: [
-      { id: 802, main: 'Clouds', description: 'scattered clouds', icon: '03d' },
+      { id: 802, main: 'Clouds', description: 'scattered clouds', icon: '13d' },
     ],
     wind_deg: 300,
     wind_speed: 5,
@@ -79,8 +79,8 @@ export const currentWeather = {
       uvi: 0.81,
       weather: [
         {
-          description: 'broken clouds',
-          icon: '04d',
+          description: 'light snow',
+          icon: '13d',
           id: 803,
           main: 'Clouds',
         },
@@ -149,8 +149,8 @@ export const currentWeather = {
       uvi: 0.81,
       weather: [
         {
-          description: 'broken clouds',
-          icon: '04d',
+          description: 'few clouds',
+          icon: '02d',
           id: 803,
           main: 'Clouds',
         },
@@ -184,8 +184,8 @@ export const currentWeather = {
       uvi: 0.81,
       weather: [
         {
-          description: 'broken clouds',
-          icon: '04d',
+          description: 'clear sky',
+          icon: '01d',
           id: 803,
           main: 'Clouds',
         },

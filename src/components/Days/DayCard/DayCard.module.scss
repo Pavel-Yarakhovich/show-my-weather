@@ -10,7 +10,6 @@
   height: 207.23;
   background: linear-gradient(180deg,$white 0%, rgba($white, 0) 100%), #FBF8E1;
   border-radius: 8px;
-  
 
     .Day {
       width: 60%;
@@ -18,19 +17,19 @@
       margin-bottom: 9.19px;
       padding: 0;
       text-align: center;
-      @include text(Roboto, 700, 14px, 16.41px, 0.05em);
+      font-size: 1rem;
     }
-        
+
     table {
       margin: 0;
       padding: 0;
-      @include text(Roboto, 300, 12px, 14px, 0.05em);
-      border-spacing: 20.8px 10px;
-    
+      font-size: .85rem;
+      border-spacing: .75rem .5px;
+
         td:first-child {
           text-align: right;
         }
-        
+
         td:last-child {
           text-align: left;
         }
