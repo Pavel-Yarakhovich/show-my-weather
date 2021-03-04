@@ -3,6 +3,9 @@ import axios from 'axios';
 import { observer } from 'mobx-react-lite';
 import { ONE_CALL_API } from '../constants/API';
 
+import Header from '../components/Header/Header';
+import { Days } from '../components/Days/Days';
+
 export const Home = observer(({ store }) => {
   const [weatherData, setWeatherData] = React.useState(null);
   const [coords, setCoords] = React.useState(null);
@@ -39,5 +42,8 @@ export const Home = observer(({ store }) => {
     }
   }, [coords]);
 
-  return weatherData ? <p>Home component</p> : <p>Loading...</p>;
+  return weatherData ? (    <div>
+      <Header />
+      <Days />
+    </div>) : <p>Loading...</p>;
 });

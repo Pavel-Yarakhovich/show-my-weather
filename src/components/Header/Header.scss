@@ -1,0 +1,35 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 20px 25px 53px;
+  background-color: rgba(18, 37, 106, 1);
+}
+
+.Date {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42.19px;
+  color: #ffffff;
+}
+
+.Location {
+  width: 330px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-sizing: border-box;
+  box-shadow: inset 4px 1px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.Location::placeholder {
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+color: #818181;
+}
