@@ -1,8 +1,8 @@
 import React from 'react';
 import { convertKelvinToCelsius } from '../../utils';
-import * as styles from './localWeather.module.scss';
+import * as styles from './LocationCard.module.scss';
 
-export const LocalWeather = React.memo(({ weather }) => {
+export const LocationCard = React.memo(({ weather }) => {
   return (
     <div className={styles.container}>
       <div className={styles.temp}>
@@ -17,4 +17,4 @@ export const LocalWeather = React.memo(({ weather }) => {
   );
 });
 
-LocalWeather.displayName = 'Local Weather';
+LocationCard.displayName = 'Location Card';
