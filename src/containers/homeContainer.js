@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { observer } from 'mobx-react-lite';
 import { ONE_CALL_API } from '../constants/API';
+import { LocalWeather } from './LocalWeather/LocalWeather';
+import * as styles from './homeContainer.module.scss';
 
 import { Header } from '../components/Header/Header';
 import { Days } from '../components/Days/Days';
@@ -46,4 +48,7 @@ export const Home = observer(({ store }) => {
       <Header />
       <Days />
     </div>) : <p>Loading...</p>;
+    <div className={styles.container}>
+      <LocalWeather weather={weatherData} />
+    </div>
 });

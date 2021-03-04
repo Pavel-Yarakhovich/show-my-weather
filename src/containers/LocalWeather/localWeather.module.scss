@@ -1,0 +1,49 @@
+@import '../../variables.scss';
+
+.container {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: $white;
+  position: relative;
+  .temp {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #FBF8E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 58px;
+      font-weight: bold;
+      color: $night_sky;
+      white-space: nowrap;
+    }
+  }
+  .location {
+    position: absolute;
+    left: 50%;
+    bottom: -5%;
+    transform: translate(-50%);
+    color: $night_sky;
+    font-size: 72px;
+    font-weight: bold;
+    &::before {
+      width: 50vw;
+      height: 5rem;
+      font-size: 150px;
+      letter-spacing: 0.05em;
+      color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(10%);
+      display: block;
+      content: attr(data-loc);
+    }
+  }
+}
