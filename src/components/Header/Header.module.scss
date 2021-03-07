@@ -2,9 +2,10 @@
 
 .Header {
   position: fixed;
+  z-index: 3;
   display: flex;
   justify-content: space-around;
-  width: 1170px;
+  width: 100%;
   padding: 0;
   margin: 0;
   padding-top: 15px;
@@ -16,7 +17,6 @@
   .Date {
     margin: 0;
     padding: 0;
-    font-family: Roboto;
     font-size: 36px;
     font-weight: 700;
     line-height: 42.19px;
@@ -24,60 +24,51 @@
     margin-right: 40%;
   }
 
-    button {
-      width: 100px;
-      height: 40px;
-      padding: 0;
-      margin-right: 15px;
-      font-size: large;
-      font-weight: bold;
-      background:$creamy;
-      border: 1px solid rgba($black, 0.14);
-      box-sizing: border-box;
-      box-shadow: inset 4px 1px 12px rgba($black, 0.25);
-      border-radius: 8px;
-      outline: none;
-    }
-  
-    button:hover {
+  button {
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    margin-right: 15px;
+    font-size: large;
+    font-weight: bold;
+    background: $creamy;
+    border: 1px solid rgba($black, 0.14);
+    box-sizing: border-box;
+    box-shadow: inset 4px 1px 12px rgba($black, 0.25);
+    border-radius: 8px;
+    outline: none;
+    transition: all 250ms ease;
+    &:hover {
       transform: scale(1.1);
+      cursor: pointer;
     }
-  
-  
-    
-    .Location {
-      width: 280px;
-      height: 50px;
-      background: $white;
-      border: 1px solid rgba($black, 0.14);
-      box-sizing: border-box;
-      box-shadow: inset 4px 1px 12px rgba($black, 0.25);
-      border-radius: 8px;
-      outline: none;
+  }
+
+  .Location {
+    width: 280px;
+    height: 50px;
+    background: $white;
+    border: 1px solid rgba($black, 0.14);
+    box-sizing: border-box;
+    box-shadow: inset 4px 1px 12px rgba($black, 0.25);
+    border-radius: 8px;
+    outline: none;
+    &::placeholder {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
     }
-    
-    .Location::placeholder {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    }
-    
-    .Location:focus {
+    &:focus {
       box-shadow: 0 0 2px 3px rgba($cyan, 0.8);
       animation: scale 3s ease-in-out infinite;
-      
-      @keyframes scale {
-        // 90% { transform: none; }   
-        100% { transform: scale(1.02); }
-      }
-  
-    }
 
-.Location::placeholder {
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 19px;
+      @keyframes scale {
+        // 90% { transform: none; }
+        100% {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
 }
