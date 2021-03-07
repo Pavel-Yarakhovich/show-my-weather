@@ -12,7 +12,7 @@ export const currentWeather = {
     uvi: 0.25,
     visibility: 10000,
     weather: [
-      { id: 802, main: 'Clouds', description: 'scattered clouds', icon: '13d' },
+      { id: 802, main: 'Clouds', description: 'scattered clouds', icon: '02d' },
     ],
     wind_deg: 300,
     wind_speed: 5,
