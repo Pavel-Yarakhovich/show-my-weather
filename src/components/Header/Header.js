@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import classes from './Header.module.scss';
 
-export const Header = () => {
+export const Header = (props) => {
   const inputRef = React.useRef(null);
   React.useEffect(() => {
     inputRef.current.focus();
@@ -13,12 +13,16 @@ export const Header = () => {
       <h1 className={classes.Date}>
         {moment(new Date()).format('DD MMMM yyyy')}
       </h1>
-      <input
-        type="search"
-        ref={inputRef}
-        placeholder="Enter location..."
-        className={classes.Location}
-      />
+      <div className={classes.Controls}>
+        <button onClick={props.clicked}>Push</button>
+        <input
+          type="search"
+          ref={inputRef}
+          placeholder="Enter location..."
+          className={classes.Location}
+          onChange={props.changed}
+        />
+      </div>
     </header>
   );
 };

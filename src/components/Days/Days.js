@@ -8,7 +8,7 @@ export const Days = ({ forecast }) => {
       <input type="button" id="arrowBack" />
       <label htmlFor="arrowBack" className={classes.arrowBack} />
       {forecast.map((day, idx) => (
-        <DayCard key={idx} day={day} />
+        <DayCard key={idx} day={day} id={idx} />
       ))}
       <input type="button" id="arrowNext" />
       <label htmlFor="arrowNext" className={classes.arrowNext} />
