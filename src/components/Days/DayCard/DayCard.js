@@ -4,8 +4,8 @@ import { getWeatherIcon } from '../../../utils';
 import classes from './DayCard.module.scss';
 
 export const DayCard = (props) => {
-  let cardClasses = [classes.Card];
-  if (props.id === 'scale') {
+  const cardClasses = [classes.Card];
+  if (props.id === 3) {
     cardClasses.push(classes.Scale);
   }
   return (
@@ -20,15 +20,15 @@ export const DayCard = (props) => {
       <table>
         <tbody>
           <tr>
-            <td>Temp</td>
+            <td>Temp:</td>
             <td>{props.day.dew_point}</td>
           </tr>
           <tr>
-            <td>Atm</td>
+            <td>Atm:</td>
             <td>{props.day.pressure}mm</td>
           </tr>
           <tr>
-            <td>Hum</td>
+            <td>Hum:</td>
             <td>{props.day.humidity}%</td>
           </tr>
         </tbody>

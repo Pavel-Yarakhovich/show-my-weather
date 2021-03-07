@@ -1,0 +1,54 @@
+@import "variables";
+
+.RequestsList {
+  justify-self: flex-end ;
+  opacity: 0.99;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: $cyan;
+    font-weight: bold;
+  }
+ 
+  ul {
+    opacity: 0.99;
+    z-index: 0;
+    position: relative;
+    top: -3px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    max-height: 50vh;
+    overflow: hidden;
+    
+    li {
+      margin: 0;
+      padding: 0;
+      text-transform: none;
+      list-style: none;
+      color: $black;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  .OpacityCover::after {
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 200px;
+    height: 80px;
+    content: "";
+    background: linear-gradient(to bottom, rgb(220, 215, 230), transparent);
+  }
+}
+
+
