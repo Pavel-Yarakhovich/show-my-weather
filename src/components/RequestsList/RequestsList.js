@@ -3,7 +3,6 @@ import classes from './RequestsList.module.scss';
 
 export const RequestsList = ({ requests }) => {
   let ul = document.querySelector('ul');
-  let RequestsList = document.querySelector(classes.RequestsList);
   let ulStyle;
   if (ul?.clientHeight < ul?.scrollHeight) {
     console.log(ul);

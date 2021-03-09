@@ -37,3 +37,8 @@
 }
 
 
+@media (max-width: 480px) {
+  .Cards {
+    flex-direction: column;
+  }
+}

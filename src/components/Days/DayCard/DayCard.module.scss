@@ -20,6 +20,8 @@
       @include text(-apple-system, 700, 14px, 16.41px, 0.05em);
     }
 
+    
+
          
     table {
       margin: 0;
@@ -46,4 +48,8 @@
   transform: scale(1.23);
   margin-left: 20px;
   margin-right: 20px;
+  z-index: 3;
 }
+
+
+
