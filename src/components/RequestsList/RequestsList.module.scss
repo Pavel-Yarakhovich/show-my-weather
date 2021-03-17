@@ -24,7 +24,7 @@
     padding: 0;
     display: flex;
     flex-direction: column-reverse;
-    max-height: 50vh;
+    max-height: 40vh;
     overflow: hidden;
     
     li {
@@ -45,7 +45,7 @@
     display: block;
     top: 0;
     width: 200px;
-    height: 80px;
+    height: 100px;
     content: "";
     background: linear-gradient(to bottom, rgb(220, 215, 230), transparent);
   }

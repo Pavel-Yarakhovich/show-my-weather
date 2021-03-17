@@ -6,7 +6,7 @@ export const Header = (props) => {
   const inputRef = React.useRef(null);
   React.useEffect(() => {
     inputRef.current.focus();
-  }, []);
+  }, [props.clicked]);
 
   return (
     <header className={classes.Header}>
@@ -21,6 +21,9 @@ export const Header = (props) => {
           placeholder="Enter location..."
           className={classes.Location}
           onChange={props.changed}
+          clicked={props.clicked}
+          value={props.value}
+          onKeyPress={props.onkey}
         />
       </div>
     </header>
