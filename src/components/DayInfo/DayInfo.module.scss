@@ -2,22 +2,24 @@
 .DayInfo {
   margin: 0;
   padding: 0;
-  @include text(-apple-system, 500, 20px, 0, 0.05em);
-  border-spacing: 30.8px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.1;
+  border-spacing: 1rem;
 
-    // .Geolocation {
-    //   position: absolute;
-    //   top: 20%;
-    //   right: 5%;
+  // .Geolocation {
+  //   position: absolute;
+  //   top: 20%;
+  //   right: 5%;
 
-    // }
+  // }
 
-    td:first-child {
-      text-align: right;
-      font-weight: bolder;
-    }
-    
-    td:last-child {
-      text-align: left;
-    }
+  td:first-child {
+    text-align: right;
+    font-weight: bolder;
+  }
+
+  td:last-child {
+    text-align: left;
+  }
 }

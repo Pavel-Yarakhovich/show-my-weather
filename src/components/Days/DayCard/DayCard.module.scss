@@ -17,26 +17,24 @@
       margin-bottom: 9.19px;
       padding: 0;
       text-align: center;
-      @include text(-apple-system, 700, 14px, 16.41px, 0.05em);
+      font-size: 1rem;
     }
 
-    
-
-         
     table {
       margin: 0;
       padding: 0;
-      border-spacing: 5px 0;
+      font-size: .85rem;
+      border-spacing: .75rem .5px;
       
        td {
         margin: 0;
         padding: 0;
-       }  
+       }
 
         td:first-child {
           text-align: right;
         }
-        
+
         td:last-child {
           text-align: left;
           font-weight: bold;

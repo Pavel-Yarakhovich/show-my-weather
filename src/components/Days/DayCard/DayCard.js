@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import logo from '../../../assets/sun.svg';
+import { getWeatherIcon } from '../../../utils';
 import classes from './DayCard.module.scss';
 
 export const DayCard = (props) => {
@@ -13,7 +13,10 @@ export const DayCard = (props) => {
       <h2 className={classes.Day}>
         {moment(props.day.dt * 1000).format('dddd, DD MMMM')}
       </h2>
-      <img src={logo}></img>
+      {props.day.weather[0]?.icon ? (
+        <img src={getWeatherIcon(props.day.weather[0]?.icon)} />
+      ) : null}
+
       <table>
         <tbody>
           <tr>
