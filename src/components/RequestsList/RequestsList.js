@@ -5,7 +5,6 @@ export const RequestsList = ({ requests }) => {
   let ul = document.querySelector('ul');
   let ulStyle;
   if (ul?.clientHeight < ul?.scrollHeight) {
-    console.log(ul);
     ulStyle = classes.OpacityCover;
   }
 

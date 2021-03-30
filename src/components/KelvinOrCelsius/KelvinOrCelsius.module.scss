@@ -1,0 +1,22 @@
+@import "variables";
+
+.KelvinOrCelsius {
+  position: absolute;
+  top: 18%;
+  right: 35.5%;
+  font-size: 58px;
+  font-weight: bold;
+  color: $night_sky;
+  white-space: nowrap;
+  
+  select {
+    margin-left: 20px;
+    background-color: transparent;
+    font-size: 58px;
+    font-weight: bold;
+    color: $night_sky;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+  }
+}

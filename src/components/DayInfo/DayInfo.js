@@ -4,7 +4,13 @@ import { convertKelvinToCelsius } from '../../utils/index';
 import classes from './DayInfo.module.scss';
 import { momentFormat } from '../../utils/index';
 
-export const DayInfo = ({ weather }) => {
+export const DayInfo = ({ weather, temp }) => {
+  let toggleKelvinCelsius = function () {
+    return temp
+      ? temp + (temp > 100 ? ' K' : ' \u2103')
+      : convertKelvinToCelsius(weather.current.feels_like).toFixed(1) +
+          ' \u2103';
+  };
   return (
     <table className={classes.DayInfo}>
       <tbody>
@@ -16,10 +22,7 @@ export const DayInfo = ({ weather }) => {
         </tr> */}
         <tr>
           <td>Temperature</td>
-          <td>
-            {convertKelvinToCelsius(weather.current.dew_point).toFixed(1)}
-            &#8451;
-          </td>
+          <td>{toggleKelvinCelsius()}</td>
         </tr>
         <tr>
           <td>Atmoshere</td>

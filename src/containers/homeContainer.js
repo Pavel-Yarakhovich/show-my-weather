@@ -8,7 +8,9 @@ import * as styles from './homeContainer.module.scss';
 import { Header } from '../components/Header/Header';
 import { Days } from '../components/Days/Days';
 import { RequestsList } from '../components/RequestsList/RequestsList';
+import KelvinOrCelsius from '../components/KelvinOrCelsius/KelvinOrCelsius';
 import { DayInfo } from '../components/DayInfo/DayInfo';
+import { convertKelvinToCelsius } from '../utils/index';
 
 export const Home = observer(() => {
   const [weatherData, setWeatherData] = React.useState(null);
@@ -16,6 +18,7 @@ export const Home = observer(() => {
   const [requests, setRequests] = React.useState([]);
   const [curInput, setCurInput] = React.useState('');
   const [inputValue, setInputValue] = React.useState('');
+  const [temperature, setTemperature] = React.useState(null);
 
   const saveCurRequest = () => {
     setRequests((prev) => [curInput, ...prev]);
@@ -28,11 +31,24 @@ export const Home = observer(() => {
     setInputValue(target.value);
   };
 
-  const handleKeyPress = ({ target }) => {
-    if (target.keyCode === 13) {
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
       saveCurRequest();
     }
   };
+
+  const toggleKelvinCelsius = ({ target }) => {
+    return target.value === 'kelvin'
+      ? setTemperature(weatherData.current.feels_like.toFixed(0))
+      : setTemperature(
+          convertKelvinToCelsius(weatherData.current.feels_like).toFixed(1)
+        );
+  };
+  // React.useEffect(() => {
+  //   T(
+  //     convertKelvinToCelsius(weatherData?.current.feels_like).toFixed(1)
+  //   );
+  // });
 
   React.useEffect(() => {
     console.log('weatherData', weatherData);
@@ -76,9 +92,18 @@ export const Home = observer(() => {
         <div className={styles.container}>
           <RequestsList requests={requests} />
           <LocationCard weather={weatherData} />
-          <DayInfo weather={weatherData} />
+          <DayInfo weather={weatherData} temp={temperature} />
+          <KelvinOrCelsius
+            changed={toggleKelvinCelsius}
+            temp={temperature}
+            weather={weatherData}
+          />
         </div>
-        <Days forecast={weatherData?.daily.slice(0, 7)} />
+        <Days
+          forecast={weatherData?.daily.slice(0, 7)}
+          weather={weatherData}
+          temp={temperature}
+        />
       </div>
     </>
   ) : (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertKelvinToCelsius } from '../../utils';
+// import { convertKelvinToCelsius } from '../../utils';
 import * as styles from './LocationCard.module.scss';
 
 export const LocationCard = React.memo(({ weather }) => {
@@ -7,7 +7,7 @@ export const LocationCard = React.memo(({ weather }) => {
     <div className={styles.container}>
       <div className={styles.temp}>
         <span>
-          {convertKelvinToCelsius(weather.current.feels_like).toFixed(1)}
+          {/* {convertKelvinToCelsius(weather.current.feels_like).toFixed(1)} */}
         </span>
       </div>
       <div data-loc={weather.timezone} className={styles.location}>

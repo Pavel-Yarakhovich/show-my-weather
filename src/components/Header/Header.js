@@ -21,7 +21,6 @@ export const Header = (props) => {
           placeholder="Enter location..."
           className={classes.Location}
           onChange={props.changed}
-          clicked={props.clicked}
           value={props.value}
           onKeyPress={props.onkey}
         />
