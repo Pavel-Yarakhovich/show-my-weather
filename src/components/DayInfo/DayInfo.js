@@ -1,6 +1,4 @@
 import React from 'react';
-// import { weather } from '../../__mocks__/response/weather';
-import { convertKelvinToCelsius } from '../../utils/index';
 import classes from './DayInfo.module.scss';
 import { momentFormat } from '../../utils/index';
 

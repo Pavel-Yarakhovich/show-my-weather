@@ -8,7 +8,7 @@ import * as styles from './homeContainer.module.scss';
 import { Header } from '../components/Header/Header';
 import { Days } from '../components/Days/Days';
 import { RequestsList } from '../components/RequestsList/RequestsList';
-import KelvinOrCelsius from '../components/KelvinOrCelsius/KelvinOrCelsius';
+// import KelvinOrCelsius from '../components/KelvinOrCelsius/KelvinOrCelsius';
 import { DayInfo } from '../components/DayInfo/DayInfo';
 import { convertKelvinToCelsius } from '../utils/index';
 
@@ -101,17 +101,21 @@ export const Home = observer(() => {
         />
         <div className={styles.container}>
           <RequestsList requests={requests} />
-          <LocationCard weather={weatherData} />
+          <LocationCard
+            weather={weatherData}
+            changed={toggleKelvinCelsius}
+            temp={temperature}
+          />
           <DayInfo
             weather={weatherData}
             temp={temperature}
             tempUnit={temperatureUnit}
           />
-          <KelvinOrCelsius
+          {/* <KelvinOrCelsius
             changed={toggleKelvinCelsius}
             temp={temperature}
             weather={weatherData}
-          />
+          /> */}
         </div>
         <Days
           forecast={weatherData?.daily.slice(0, 7)}

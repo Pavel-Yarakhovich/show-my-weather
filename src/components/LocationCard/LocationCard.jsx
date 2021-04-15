@@ -1,14 +1,12 @@
 import React from 'react';
-// import { convertKelvinToCelsius } from '../../utils';
+import KelvinOrCelsius from '../KelvinOrCelsius/KelvinOrCelsius';
 import * as styles from './LocationCard.module.scss';
 
-export const LocationCard = React.memo(({ weather }) => {
+export const LocationCard = React.memo(({ weather, temp, changed }) => {
   return (
     <div className={styles.container}>
       <div className={styles.temp}>
-        <span>
-          {/* {convertKelvinToCelsius(weather.current.feels_like).toFixed(1)} */}
-        </span>
+        <KelvinOrCelsius weather={weather} temp={temp} changed={changed} />
       </div>
       <div data-loc={weather.timezone} className={styles.location}>
         {weather.timezone}
