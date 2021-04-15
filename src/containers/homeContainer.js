@@ -18,7 +18,8 @@ export const Home = observer(() => {
   const [requests, setRequests] = React.useState([]);
   const [curInput, setCurInput] = React.useState('');
   const [inputValue, setInputValue] = React.useState('');
-  const [temperature, setTemperature] = React.useState(null);
+  const [temperature, setTemperature] = React.useState('');
+  const [temperatureUnit, setTemperatureUnit] = React.useState('\u2103');
 
   const saveCurRequest = () => {
     setRequests((prev) => [curInput, ...prev]);
@@ -31,24 +32,23 @@ export const Home = observer(() => {
     setInputValue(target.value);
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+  const searchByKeyPress = (event) => {
+    if (event.key == 'Enter') {
       saveCurRequest();
     }
   };
 
   const toggleKelvinCelsius = ({ target }) => {
-    return target.value === 'kelvin'
-      ? setTemperature(weatherData.current.feels_like.toFixed(0))
-      : setTemperature(
-          convertKelvinToCelsius(weatherData.current.feels_like).toFixed(1)
-        );
+    if (target.value === 'kelvin') {
+      setTemperature(weatherData.current.feels_like.toFixed(0));
+      setTemperatureUnit('K');
+    } else {
+      setTemperature(
+        convertKelvinToCelsius(weatherData.current.feels_like).toFixed(1)
+      );
+      setTemperatureUnit('\u2103');
+    }
   };
-  // React.useEffect(() => {
-  //   T(
-  //     convertKelvinToCelsius(weatherData?.current.feels_like).toFixed(1)
-  //   );
-  // });
 
   React.useEffect(() => {
     console.log('weatherData', weatherData);
@@ -71,6 +71,9 @@ export const Home = observer(() => {
           (res) => {
             if (res.data) {
               setWeatherData(res.data);
+              setTemperature(
+                convertKelvinToCelsius(res.data.current.feels_like).toFixed(1)
+              );
             }
           },
           (err) => {
@@ -80,6 +83,13 @@ export const Home = observer(() => {
     }
   }, [coords]);
 
+  // React.useEffect(() => {
+  //   console.log(weatherData);
+  //   setTemperature(
+  //     convertKelvinToCelsius(weatherData?.current.feels_like).toFixed(1)
+  //   );
+  // }, []);
+
   return weatherData ? (
     <>
       <div className={styles.Body}>
@@ -87,12 +97,16 @@ export const Home = observer(() => {
           changed={saveCurInput}
           clicked={saveCurRequest}
           value={inputValue}
-          onkey={handleKeyPress}
+          onkey={searchByKeyPress}
         />
         <div className={styles.container}>
           <RequestsList requests={requests} />
           <LocationCard weather={weatherData} />
-          <DayInfo weather={weatherData} temp={temperature} />
+          <DayInfo
+            weather={weatherData}
+            temp={temperature}
+            tempUnit={temperatureUnit}
+          />
           <KelvinOrCelsius
             changed={toggleKelvinCelsius}
             temp={temperature}
@@ -103,6 +117,7 @@ export const Home = observer(() => {
           forecast={weatherData?.daily.slice(0, 7)}
           weather={weatherData}
           temp={temperature}
+          tempUnit={temperatureUnit}
         />
       </div>
     </>
